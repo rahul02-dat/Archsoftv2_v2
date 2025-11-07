@@ -10,25 +10,25 @@ database:
   collection_name: "persons"
 
 face_recognition:
-  det_thresh: 0.5
-  min_face_size: 40
+  det_thresh: 0.6  # Increased from 0.5 - higher threshold means more confident detections only
+  min_face_size: 60  # Increased from 40 - larger minimum face size for better recognition
   model_name: "buffalo_l"
 
 matching:
-  threshold: 0.6
+  threshold: 0.65  # Increased from 0.6 - higher threshold for matching = fewer false positives
   min_confidence: 0.7
 
 quality:
-  min_blur_threshold: 100
-  min_brightness: 40
-  max_brightness: 220
-  min_face_size: 40
+  min_blur_threshold: 150  # Increased from 100 - stricter blur check
+  min_brightness: 50  # Adjusted for better lighting requirements
+  max_brightness: 210  # Adjusted for better lighting requirements
+  min_face_size: 60  # Increased to match face_recognition setting
 
 notifications:
   enabled: true
   desktop: false
   websocket: true
-  cooldown_seconds: 60
+  cooldown_seconds: 60  # Cooldown period to avoid duplicate notifications
 
 api:
   host: "0.0.0.0"
