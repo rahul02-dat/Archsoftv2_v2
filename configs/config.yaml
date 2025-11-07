@@ -1,0 +1,36 @@
+camera:
+  rtsp_url: "rtsp://10.101.221.221:8080/h264_ulaw.sdp"
+  fps: 30
+  width: 1280
+  height: 720
+
+database:
+  mongo_uri: "mongodb://localhost:27017/"
+  db_name: "face_id"
+  collection_name: "persons"
+
+face_recognition:
+  det_thresh: 0.5
+  min_face_size: 40
+  model_name: "buffalo_l"
+
+matching:
+  threshold: 0.6
+  min_confidence: 0.7
+
+quality:
+  min_blur_threshold: 100
+  min_brightness: 40
+  max_brightness: 220
+  min_face_size: 40
+
+notifications:
+  enabled: true
+  desktop: false
+  websocket: true
+  cooldown_seconds: 60
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
